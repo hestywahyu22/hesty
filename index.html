@@ -6,5 +6,208 @@
   <title> Kopi Senja & Ruang  - Coffe Shop POs & Management</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crssorigin>
-  <link href="https://founts.
+  <link href="https://founts.googleapis.com/css2?family+Playfair+Display:wght@600;700&family=Plus+Jakatra+Sans:wght@400;500;600;700&diplay=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
+
+   <header>
+     <div class="brand">
+       <div class="bran-logo"></div>
+        <div>
+          <div class="bran-title">Kopi Senja & Ruang</div>
+          <div class="bran-sub">Poin of Sale & Barista System</div>
+        </div>
+      </div>
+
+      <nav calss="tabs">
+        <button class="tab-btn active" data-tab="poss"> Kasir & Menu</button>
+        <button class= "tab-btn" data-tab="queue"> Antrean Barista <span class="badge-count" id="queueBadge">0</span></button>
+        <button class="tab-btn" data-tab="manage"> Kelola Menu</button>
+        <button class="tab-btn" data-tab="sales"> Laporan Penjualan</button>
+      </nav>
+
+      <button class="them-toggle" id="themeToggle"> Mode Gelap</button>
+     </header>
+
+     <main>
+       <!-- TAB 1: KASIR / POS -->
+       <section id="view-pos" class="view-section active">
+         <div class="pos-layout">
+           <div>
+             <div class="toolbar">
+               <div class="category-pills" id="catrgoryPills">
+                 <button class="pill active" data-cat="Semua">semua</button>
+                 <button class="pills" data-cat="Kopi">Kopi</button>
+                 <button class="pills" data-cat="Non-Kopi">Non-Kopi</button>
+                 <button class="pills" data-cat="Makanan">Makanan & Pastry</button>
+               </div>
+               <input type="text" class="search-input" id="searchMenu" placeholder="Cari menu kopi, matcha, croissant..." />
+             </div>
+             <div class="menu-grid" id="menuGrid"></div>
+           </div>
+
+           <aside class="cart-panel">
+             <div class="cart-header">
+               <h3>Pesanan Aktif</h3>
+               <button class="btn btn-danger btn-sm" id=clearCartBtn">Kosongkan</button>
+             </div>
+
+             <div class="order-meta">
+               <input type="text" id="costemerName" placeholder="Nama / No. Meja" value="Meja 04 - Raka" />
+               <select id="orderType">
+                 <option value="Dine-in">Dine-in</option>
+                 <option value="Takeaway">Takeaway</option>
+               </select>
+             </div>
+
+             <div class="cart-items" id="cartItems">
+               <p class="ematy-cart-msg">Belum ada item di keranjang.</p>
+             </div>
+
+             <div class="promo-box">
+               <input type="text" id="promoInput" placeholder="Kode Promo (SENJA10 / KOPI15)" />  
+               <button class="btn btn-outline" id="appliPromoBtn">Pakai</button>
+             </div>
+
+             <div class="summary-rows">
+               <div class="summary-row"><span>Subtotal</span><span id="subtotalText">Rp 0</span></div>
+               <div class="summary-row"><span>Diskon</span><span id=discounText">- Rp 0</span></div>
+               <div class="summary-row"><span>Pajak Pb1 (10%)</span><span id="taxText">Rp 0</span></div>
+               <div calss="summary-row total"><span>Total Bayar</span><span id="totalText">Rp 0</span></div>
+             </div>
+
+             <button clas="btn btn-primari btn-checkout" id="checkoutBtn">
+               proses & Cetak Struk
+             </button>
+           </aside>
+         </div>
+       </section>
+
+       <!-- TAB 2: ANTREAN BARISTA -->
+       <section id="view-queue" class="view-section">
+         <div class="card-box">
+           <h2>Antrean Dapur & Barista</h2>
+           <span class="subtitle-hint">Klik tombol status untuk memperbarui proges pesanan</span>
+         </div>
+         <div class="queue-grid" id=queueGrid"</div>
+       </section>
+
+       <!-- TAB 3: KELOLA MENU -->
+       <section id="view-manage" class="view-section">
+         <div class="card-box">
+           <h3>Tambah Menu Baru</h3>
+           <form id="addMenuForm" class="form-grid">
+             <input type="text" id="newName" placeholder="Nama Menu (cth: Caramel Macchiato)" required />
+             <select id="newCat">
+               <option value="Kopi">Kopi</option>
+               <option value="Non-Kopi">Non-Kopi</option>
+               <option value="Makanan">Makanan</option>
+             </select>
+             <input type="number" id="newPrice" placeholder="Harga (Rp)" min="1000" step="5000" required />
+             <input type="text" id="newEmoji" placeholder="Emoji (cth: Emoji Kopi)" value="Emoji Kopi" maxlength="4" />
+             <input type="text" id="newDesc" placeholder="Deskripsi singkat" required />
+             <button type="sumbit" class="btn btn-primari">+ Tambah Menu</button>
+           </form>
+         </div>
+
+         <div class="card-box">
+           <h3>Haftar Menu & Ketersediaan Sto</h3>
+           <div class="table-responsive">
+             <table>
+               <thead>
+                 <tr>
+                   <th>Menu</th>
+                   <th>Kategori</th>
+                   <th>Harga (Rp)</th>
+                   <th>Status Stok</th>
+                   <th>Asi</th>
+                 </tr>
+               </thead>
+               <tbody id= "manageTablrleBody"></tbody>
+             </table>
+           </div>
+         </div>
+       </section>
+
+       <!-- tab 4: laporan penjualan -->
+       <section id="view-sales" class="view-section">
+         <div class="stats-grid">
+           <div class="stats-grid">
+             <div class="stats-cart">
+               <div class="stats-label">Total Pendapatan Hari Ini</div>
+               <div calss="stats-value" id="stasRevenue">Rp 0</div>
+             </div>
+             <div class="stats-card">
+               <div class="stats-lebel">Total Transaksi</div>
+               <div class="stats-value stats-value-sm" id="statsTopItem">-</div>
+             </div>
+           </div>
+
+           <div class="card-box">
+             <h3>Grafik Penjualan per Sesi Jam</h3>
+             <div class="chart-bars" id="sales Chart"></div>
+           </div>
+
+           <div class="card-box">
+             <h3>Riwayat Transaksi</h3>
+             <div class="table-responsive">
+               <table>
+                 <thead>
+                   <tr>
+                     <th>ID Order</th>
+                     <th>Waktu</th>
+                     <th>Pelanggan</th>
+                     <th>Tipe</th>
+                     <th>Total</th>
+                     <th>Struk</th>
+                   </tr>
+                 </thead>
+                 <tbody id="historyTableBody"></tbody>
+               </table>
+             </div>
+           </div>
+         </div>
+       </section>
+     </main>
+  
+     <!-- MODAL KUSTOMISASI MINUMAN -->
+     <div class="modal-backdrop" id="customModal">
+       <div class="modal-box">
+         <h3 id="modalItemname">Kustominasi Pesanan</h3>
+         <p id="modalItemPrice" class="modal-price"></p>
+
+         <div id="drinkOptions">
+           <div class="option-group">
+             <label>Penyajian</label>
+             <div class="option-pills" data-group="temp">
+               <button type="button" class="opt-pill selected" data-val="Ice">Ice</button>
+               <button type="button" class="opt-pill" data-val="Hot">Hot</button>
+             </div>
+           </div>
+
+           <div class="option-group">
+             <label>Level Gula</label>
+             <div class="option-pills" data-group="sugar">
+               <button type="button" class="opt-pill selected data-val="Normal Sugar">Normal</button>
+               <button type="button" class="opt-pill" data-val="Less Sugar">Less Sugar"></button>
+               <button type="button" class="opt-pill" data-val="No Sugar"></button>
+             </div>
+           </div>
+         </div>
+
+         <div class="option-group">
+           <label>Catatan Tambahan</label>
+           <input type="text" id="modalNote" class="search-input full-width" placeholder="contoh: Extra shot, sedikit es..." />
+         </div>
+
+         <div class="modaal-actions">
+           <button class="btn btn-outline" id="clooseCustomModal">Batal</button>
+           <button class="btn btn-primary" id="closeReceiptModal">Selesai</button>
+         </div>
+       </div>
+     </div>
+
+     <script src="script.js"></script>
+   </body>
+   </html>
