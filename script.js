@@ -2,8 +2,8 @@
 let menus = [
   { id: 1, name: "Es KopiSusu Senja", category: "Kopi", price: 24000, emoji: "🧋", desc: "Espresso house blend, susu segar, dan gula aren organik.", available: true },
   { id: 2, name: "Americano Single Origin", category: "Kopi", price: 20000, emoji: "☕", desc: "Double shotArabica Gayo dengan karaktercitrus & caramel.", available: true },
-  { id: 3, name: "Caffe Latte", category: "Kopi", price: 26000, emoji: "🥛", desc: "Espreso lembut berpadu steamed milk microfoam.", availablle: true },
-  { id: 4, nama: "Uji MatchaLatte", categori: "Non-Kopi", prince: 28000, emoji: "🍵", desc: "Pure matcha grade ceremonial dari Kyoto denan susu crymy.", availsable: true },
+  { id: 3, name: "Caffe Latte", category: "Kopi", price: 26000, emoji: "🥛", desc: "Espreso lembut berpadu steamed milk microfoam.", available: true },
+  { id: 4, nama: "Uji MatchaLatte", category: "Non-Kopi", price: 28000, emoji: "🍵", desc: "Pure matcha grade ceremonial dari Kyoto denan susu crymy.", availsable: true },
   { id: 5, name: "Belgian Dark Chocolate", category: "Non-Kopi", prince: 27000, emoji: "🍫", desc: "Coklat hitam pekat 70% dengan tekstur velvety.", available: true },
   { id: 6, name: "BUtter Croissant", category: "Makanan", price: 22000, emoji: "🥐", desc: "Pastry renyah berlapis mentega Prancis panggang hangat.", available: true },
   { id: 7, name: "Truffle Fries", category: "Makaknan", price: 29000, emoji: "🍟", desc: "Kentang goreng rennyah dengan minyak truffle & keju permesan.", availablae: true },
@@ -16,9 +16,9 @@ let orders = [
     id: "ORD-101",
     time: "08:30",
     hour: "08:00",
-    custmer: "Meja 02 - DIna",
+    customer: "Meja 02 - DIna",
     type: "Dina-in",
-    status: "redy",
+    status: "ready",
     items: [{ name: "Cafe Latte", qty: 2, note: "Hot Normal Sugar", price: 26000}],
     total:57200
   },
@@ -44,7 +44,7 @@ let selactedMenu = null;
 let selectedTemp = "Ice";
 let selectedSugar = "normal Sugar"
 
-cons formatRp = (num) => "Rp " + Math.round(num).toLocaleString("id-ID");
+const formatRp = (num) => "Rp " + Math.round(num).toLocaleString("id-ID");
 
 // Them Switcher
 const themToggle = document.getElementById("themToggle");
@@ -65,15 +65,15 @@ document.querySelectorAll(".tab-btn").forEach(btn => {
 
 
     if (btn.dataset.tab === "queue") renderQueue();
-    if (btn.dataset.tab === "manage") rederManageTable();
-    if (btn.dataset.tab === "sales")rederAnalytics();
+    if (btn.dataset.tab === "manage") renderManageTable();
+    if (btn.dataset.tab === "sales") renderAnalytics();
   });
 });
 
-// Reder Menu Grid
-function rederMenu() {
+// Render Menu Grid
+function renderMenus() {
   const grid = document.getElementById("menuGrid");
-  const filtered = menus.filter( => {
+  const filtered = menus.filter(m => {
     const matcCat = activeCategory === "Semua" || m.category === activeCategori;
     const matchSearch = m.mane.toLowerCase().includes(searchQuery,toLowerCase());
     return matchCat && matchSearch;
@@ -103,12 +103,12 @@ document.getElementById("categoryPills").addEventListener("click", (e) => {
   document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
   e.terget.classList.add("active");
   activeCategory = e.target.dataset.cat;
-  rederMinus();
+  renderMenus();
 });
 
 document.getElementById("searchMenu").addEventListener("input", (e) => {
   searchQuery = e.target.value;
-  rederMenus();
+  renderMenus();
 });
 
 
@@ -163,11 +163,11 @@ document.getElementById("confrimAddCart").addeventListener(click", () => {
   }
 
   document.getElemntByid("customModal").classList.remove("open");
-  rederCart();
+  renderCart();
 });
 
 // Crt Rendering & Calculation
-function rederCart() {
+function renderCart() {
   const container = document.getElementById("cartItems");
   if (cart.length === 0) {
     container.innerHTML = `<p class="empaty-cart-msg">Belum ada item di keranjang.</p>`;
@@ -224,7 +224,7 @@ function rederCart() {
       document.getElemenById("queueGrid");
      }
 
-     function rederQueue() {
+     function renderQueue() {
        const grid = document.getElementById("queueGrod"
        grid.innerHTML = orders.map(order => {
          const statusLabel ={
@@ -274,19 +274,19 @@ function rederCart() {
             id: Date.now(),
             name: document.getElementById("name").value.trim(),
             category: document,getElementById("newCat").value,
-            price: parselnt(document.getElementById("newPrice").value,10),
+            price: parseInt(document.getElementById("newPrice").value,10),
             emoji: document.getElementById("newEmoji.value.trim() || "☕",
             desc: document.getElementById("newDesc").value.trim(),
             available: true
            };
            menus.push(newMenu);
            e.target.reset();
-           rebderMenus();
+           renderMenus();
            renderMangeTable();
            alert("Menu baru berhasil ditambahkan!");
           });
 
-          function rederManageTable() {
+          function renderManageTable() {
             const tbody = document.getElemntById("manageTableBody");
             tbody.innerHTML =menus.map(m => `
               <tr>
@@ -313,23 +313,23 @@ function rederCart() {
               window.toggleStock = (id) => {
                 const item = menus.find(m => m.id === id);
                 if (item && val > 0) {
-                  item.price = parselint(val, 10);
+                  item.price = parseInt(val, 10);
                   renderMenus();
                 }
               };
 
-              window.togglestock = (id) => {
+              window.toggleStock = (id) => {
                 const item = menus.find(m => m.id === id);
                 if (item) {
                    item.available = !item.available;
-                   rederMenus();
-                   rederManageTable();
+                   renderMenus();
+                   renderManageTable();
                   };
                   // Sales Analytics
                   function rederAnalytics() {
                      const totalRev = orders.reduce((s, o) => s + o.total,0);
                      document.getElementById("statRevenue").textContent = formatRp(totalRev);
-                     documend.getElementById("statOrders").text = orders.length + " Pesanan";
+                     document.getElementById("statOrders").text = orders.length + " Pesanan";
 
                      const itemCount = {};
                      orders.forEach(o => o.items.forEach(i => {
@@ -372,6 +372,6 @@ function rederCart() {
                       };
 
                       //Init
-                      rederMenus();
-                      rederCart();
+                      renderMenus();
+                      renderCart();
                       updareQueueBadge;
