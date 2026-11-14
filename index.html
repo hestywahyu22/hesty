@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang ="id" data-themes="light">
+<html lang ="id" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viaprot" content="windth=device-widh, inital-scale=1.0" />
+  <meta name="viewprot" content="windth=device-width, initial-scale=1.0" />
   <title> Kopi Senja & Ruang  - Coffe Shop POs & Management</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crssorigin>
-  <link href="https://founts.googleapis.com/css2?family+Playfair+Display:wght@600;700&family=Plus+Jakatra+Sans:wght@400;500;600;700&diplay=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
    <header>
      <div class="brand">
-       <div class="bran-logo"></div>
+       <div class="brand-logo"></div>
         <div>
-          <div class="bran-title">Kopi Senja & Ruang</div>
-          <div class="bran-sub">Poin of Sale & Barista System</div>
+          <div class="brand-title">Kopi Senja & Ruang</div>
+          <div class="brand-sub">Poin of Sale & Barista System</div>
         </div>
       </div>
 
-      <nav calss="tabs">
-        <button class="tab-btn active" data-tab="poss"> Kasir & Menu</button>
+      <nav class="tabs">
+        <button class="tab-btn active" data-tab="pos"> Kasir & Menu</button>
         <button class= "tab-btn" data-tab="queue"> Antrean Barista <span class="badge-count" id="queueBadge">0</span></button>
         <button class="tab-btn" data-tab="manage"> Kelola Menu</button>
         <button class="tab-btn" data-tab="sales"> Laporan Penjualan</button>
       </nav>
 
-      <button class="them-toggle" id="themeToggle"> Mode Gelap</button>
+      <button class="theme-toggle" id="themeToggle"> Mode Gelap</button>
      </header>
 
      <main>
@@ -36,11 +36,11 @@
          <div class="pos-layout">
            <div>
              <div class="toolbar">
-               <div class="category-pills" id="catrgoryPills">
+               <div class="category-pills" id="categoryPills">
                  <button class="pill active" data-cat="Semua">semua</button>
-                 <button class="pills" data-cat="Kopi">Kopi</button>
-                 <button class="pills" data-cat="Non-Kopi">Non-Kopi</button>
-                 <button class="pills" data-cat="Makanan">Makanan & Pastry</button>
+                 <button class="pill" data-cat="Kopi">Kopi</button>
+                 <button class="pill" data-cat="Non-Kopi">Non-Kopi</button>
+                 <button class="pill" data-cat="Makanan">Makanan & Pastry</button>
                </div>
                <input type="text" class="search-input" id="searchMenu" placeholder="Cari menu kopi, matcha, croissant..." />
              </div>
@@ -50,11 +50,11 @@
            <aside class="cart-panel">
              <div class="cart-header">
                <h3>Pesanan Aktif</h3>
-               <button class="btn btn-danger btn-sm" id=clearCartBtn">Kosongkan</button>
+               <button class="btn btn-danger btn-sm" id="clearCartBtn">Kosongkan</button>
              </div>
 
              <div class="order-meta">
-               <input type="text" id="costemerName" placeholder="Nama / No. Meja" value="Meja 04 - Raka" />
+               <input type="text" id="costomerName" placeholder="Nama / No. Meja" value="Meja 04 - Raka" />
                <select id="orderType">
                  <option value="Dine-in">Dine-in</option>
                  <option value="Takeaway">Takeaway</option>
@@ -62,22 +62,22 @@
              </div>
 
              <div class="cart-items" id="cartItems">
-               <p class="ematy-cart-msg">Belum ada item di keranjang.</p>
+               <p class="empty-cart-msg">Belum ada item di keranjang.</p>
              </div>
 
              <div class="promo-box">
                <input type="text" id="promoInput" placeholder="Kode Promo (SENJA10 / KOPI15)" />  
-               <button class="btn btn-outline" id="appliPromoBtn">Pakai</button>
+               <button class="btn btn-outline" id="applyPromoBtn">Pakai</button>
              </div>
 
              <div class="summary-rows">
                <div class="summary-row"><span>Subtotal</span><span id="subtotalText">Rp 0</span></div>
-               <div class="summary-row"><span>Diskon</span><span id=discounText">- Rp 0</span></div>
+               <div class="summary-row"><span>Diskon</span><span id=discountText">- Rp 0</span></div>
                <div class="summary-row"><span>Pajak Pb1 (10%)</span><span id="taxText">Rp 0</span></div>
-               <div calss="summary-row total"><span>Total Bayar</span><span id="totalText">Rp 0</span></div>
+               <div class="summary-row total"><span>Total Bayar</span><span id="totalText">Rp 0</span></div>
              </div>
 
-             <button clas="btn btn-primari btn-checkout" id="checkoutBtn">
+             <button class="btn btn-primari btn-checkout" id="checkoutBtn">
                proses & Cetak Struk
              </button>
            </aside>
@@ -90,7 +90,7 @@
            <h2>Antrean Dapur & Barista</h2>
            <span class="subtitle-hint">Klik tombol status untuk memperbarui proges pesanan</span>
          </div>
-         <div class="queue-grid" id=queueGrid"</div>
+         <div class="queue-grid" id="queueGrid"></div>
        </section>
 
        <!-- TAB 3: KELOLA MENU -->
@@ -107,7 +107,7 @@
              <input type="number" id="newPrice" placeholder="Harga (Rp)" min="1000" step="5000" required />
              <input type="text" id="newEmoji" placeholder="Emoji (cth: Emoji Kopi)" value="Emoji Kopi" maxlength="4" />
              <input type="text" id="newDesc" placeholder="Deskripsi singkat" required />
-             <button type="sumbit" class="btn btn-primari">+ Tambah Menu</button>
+             <button type="sumbit" class="btn btn-primary">+ Tambah Menu</button>
            </form>
          </div>
 
@@ -124,7 +124,7 @@
                    <th>Asi</th>
                  </tr>
                </thead>
-               <tbody id= "manageTablrleBody"></tbody>
+               <tbody id= "manageTableleBody"></tbody>
              </table>
            </div>
          </div>
@@ -133,20 +133,23 @@
        <!-- tab 4: laporan penjualan -->
        <section id="view-sales" class="view-section">
          <div class="stats-grid">
-           <div class="stats-grid">
-             <div class="stats-cart">
-               <div class="stats-label">Total Pendapatan Hari Ini</div>
-               <div calss="stats-value" id="stasRevenue">Rp 0</div>
+             <div class="stat-cart">
+               <div class="stat-label">Total Pendapatan Hari Ini</div>
+               <div calss="stat-value" id="stasRevenue">Rp 0</div>
              </div>
-             <div class="stats-card">
-               <div class="stats-lebel">Total Transaksi</div>
-               <div class="stats-value stats-value-sm" id="statsTopItem">-</div>
+             <div class="stat-card">
+               <div class="stat-label">Total Pendapatan Hari Ini</div>
+               <div class="stat-value" id="statOrders">0</div>
+             </div>
+             <div class="stat-card">
+               <div class="stat-lebel">Total Transaksi</div>
+               <div class="stat-value stat-value-sm" id="statTopItem">-</div>
              </div>
            </div>
 
            <div class="card-box">
              <h3>Grafik Penjualan per Sesi Jam</h3>
-             <div class="chart-bars" id="sales Chart"></div>
+             <div class="chart-bars" id="salesChart"></div>
            </div>
 
            <div class="card-box">
@@ -174,7 +177,7 @@
      <!-- MODAL KUSTOMISASI MINUMAN -->
      <div class="modal-backdrop" id="customModal">
        <div class="modal-box">
-         <h3 id="modalItemname">Kustominasi Pesanan</h3>
+         <h3 id="modalItemName">Kustominasi Pesanan</h3>
          <p id="modalItemPrice" class="modal-price"></p>
 
          <div id="drinkOptions">
@@ -189,9 +192,9 @@
            <div class="option-group">
              <label>Level Gula</label>
              <div class="option-pills" data-group="sugar">
-               <button type="button" class="opt-pill selected data-val="Normal Sugar">Normal</button>
-               <button type="button" class="opt-pill" data-val="Less Sugar">Less Sugar"></button>
-               <button type="button" class="opt-pill" data-val="No Sugar"></button>
+               <button type="button" class="opt-pill" selected data-val="Normal Sugar">Normal</button>
+               <button type="button" class="opt-pill" data-val="Less Sugar">Less Sugar</button>
+               <button type="button" class="opt-pill" data-val="No Sugar">No Sugar</button>
              </div>
            </div>
          </div>
@@ -201,12 +204,23 @@
            <input type="text" id="modalNote" class="search-input full-width" placeholder="contoh: Extra shot, sedikit es..." />
          </div>
 
-         <div class="modaal-actions">
-           <button class="btn btn-outline" id="clooseCustomModal">Batal</button>
-           <button class="btn btn-primary" id="closeReceiptModal">Selesai</button>
+         <div class="modal-actions">
+           <button class="btn btn-outline" id="closeCustomModal">Batal</button>
+           <button class="btn btn-primary" id="confirmAddCart">Tambah ke keranjang</button>
          </div>
        </div>
      </div>
+
+  <!-- MODAK STRUK PEMBAYARAN -->
+  <div class="modal-backdrop" id="receiptModal">
+    <div class="modal-box">
+      <div class="receipt-paper" id="receiptContent"></div>
+      <div class="modal-actions no-print">
+        <button class="btn btn-outline" onclick="window.print()">🖨️ Cetak</button>
+        <button class="btn btn-primary" id="closeReceiptModal">Selesai</button>
+      </div>
+    </div>
+  </div>
 
      <script src="script.js"></script>
    </body>
