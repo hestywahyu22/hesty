@@ -2,7 +2,7 @@
 <html lang ="id" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewprot" content="windth=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title> Kopi Senja & Ruang  - Coffe Shop POs & Management</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
 
    <header>
      <div class="brand">
-       <div class="brand-logo"></div>
+       <div class="brand-logo">☕</div>
         <div>
           <div class="brand-title">Kopi Senja & Ruang</div>
           <div class="brand-sub">Poin of Sale & Barista System</div>
@@ -54,7 +54,7 @@
              </div>
 
              <div class="order-meta">
-               <input type="text" id="costomerName" placeholder="Nama / No. Meja" value="Meja 04 - Raka" />
+               <input type="text" id="customerName" placeholder="Nama / No. Meja" value="Meja 04 - Raka" />
                <select id="orderType">
                  <option value="Dine-in">Dine-in</option>
                  <option value="Takeaway">Takeaway</option>
@@ -72,7 +72,7 @@
 
              <div class="summary-rows">
                <div class="summary-row"><span>Subtotal</span><span id="subtotalText">Rp 0</span></div>
-               <div class="summary-row"><span>Diskon</span><span id=discountText">- Rp 0</span></div>
+               <div class="summary-row"><span>Diskon</span><span id="discountText">- Rp 0</span></div>
                <div class="summary-row"><span>Pajak Pb1 (10%)</span><span id="taxText">Rp 0</span></div>
                <div class="summary-row total"><span>Total Bayar</span><span id="totalText">Rp 0</span></div>
              </div>
@@ -107,7 +107,7 @@
              <input type="number" id="newPrice" placeholder="Harga (Rp)" min="1000" step="5000" required />
              <input type="text" id="newEmoji" placeholder="Emoji (cth: Emoji Kopi)" value="Emoji Kopi" maxlength="4" />
              <input type="text" id="newDesc" placeholder="Deskripsi singkat" required />
-             <button type="sumbit" class="btn btn-primary">+ Tambah Menu</button>
+             <button type="submit" class="btn btn-primary">+ Tambah Menu</button>
            </form>
          </div>
 
@@ -124,7 +124,7 @@
                    <th>Asi</th>
                  </tr>
                </thead>
-               <tbody id= "manageTableleBody"></tbody>
+               <tbody id= "manageTableBody"></tbody>
              </table>
            </div>
          </div>
@@ -133,7 +133,7 @@
        <!-- tab 4: laporan penjualan -->
        <section id="view-sales" class="view-section">
          <div class="stats-grid">
-             <div class="stat-cart">
+             <div class="stat-card">
                <div class="stat-label">Total Pendapatan Hari Ini</div>
                <div calss="stat-value" id="stasRevenue">Rp 0</div>
              </div>
@@ -192,7 +192,7 @@
            <div class="option-group">
              <label>Level Gula</label>
              <div class="option-pills" data-group="sugar">
-               <button type="button" class="opt-pill" selected data-val="Normal Sugar">Normal</button>
+               <button type="button" class="opt-pill selected" data-val="Normal Sugar">Normal</button>
                <button type="button" class="opt-pill" data-val="Less Sugar">Less Sugar</button>
                <button type="button" class="opt-pill" data-val="No Sugar">No Sugar</button>
              </div>
