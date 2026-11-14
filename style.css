@@ -435,7 +435,7 @@ main {
 
 .qty-btn {
   width: 26px;
-  heigth: 26px;
+  height: 26px;
   border-radius: 7px;
   border: 1px solid var(--border);
   background: var(--bg-surface);
@@ -574,7 +574,7 @@ main {
   margin-top: 14px;
 }
 
-.form-grid input, .formm-grid select {
+.form-grid input, .form-grid select {
   padding: 10px 12px;
   border-radius: 9px;
   border: 1px solid var(--border);
