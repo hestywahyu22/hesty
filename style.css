@@ -175,7 +175,7 @@ main {
 
 .subtitle-hint {
   font-size: 0.85rem;
-  color: var(--text-secondari);
+  color: var(--text-secondary);
 }
 
 .category-pills {
@@ -230,7 +230,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: var(--sadhow);
+  box-shadow: var(--shadow);
   transition: transform 0.2s;
   position: relative;
 }
@@ -524,7 +524,7 @@ main {
 
 .done-label {
   color: var(--success);
-  fond-weight: 700;
+  font-weight: 700;
   font-size: 0.85rem;
 }
 
@@ -574,7 +574,7 @@ main {
   margin-top: 14px;
 }
 
-.from-grid input, .from-grid select {
+.form-grid input, .formm-grid select {
   padding: 10px 12px;
   border-radius: 9px;
   border: 1px solid var(--border);
@@ -601,8 +601,8 @@ th, td {
 }
 
 th {
-  color:vat(--text-secondary);
-  font-weght: 600;
+  color: var(--text-secondary);
+  font-weight: 600;
 }
 
 .price-edit-input {
@@ -621,7 +621,7 @@ th {
 
 .stock-empty  {
   background: var(--danger-bg);
-  color: vas(--danger);
+  color: var(--danger);
 }
 
 /* Analytics */
