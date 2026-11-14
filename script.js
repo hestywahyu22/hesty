@@ -336,7 +336,7 @@ function rederCart() {
                        itemCount[i.name] = (itemCount[i.name] || 0) + i.qty;
                      }));
                      const topItem = Object.entries(itemCount).sort((a, b) => b[1] - a[1])[0];
-                     document.getElementById("statTopItem").textContent = topItem ? `${topItem[0]} (${topItem[0]} (${topItem[1]}x)` : "-";
+                     document.getElementById("statTopItem").textContent = topItem ? ` (${topItem[0]} (${topItem[1]}x)` : "-";
 
                      //hourly Chart
                      const hours = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00"];
