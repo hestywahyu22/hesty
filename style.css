@@ -22,7 +22,7 @@
   --bg-main: #181310;
   --bg-surface: #231c18;
   --text-primary: #f5ede6;
-  --text-secondari: #b8a69b;
+  --text-secondary: #b8a69b;
   --accent: #d98a4e;
   --accent-hover: #e59b62;
   --accent-soft: #382930;
@@ -45,7 +45,7 @@
 
 body {
   background-color: var(--bg-main);
-  color: var(--text-pramary);
+  color: var(--text-primary);
   min-height: 100vh;
   transition: background-color 0.15s ease, color 0.25s ease;
 }
@@ -65,14 +65,14 @@ header {
   flex-wrap: wrap;
   gap: 12px;
   position: sticky;
-  top; 0;
+  top: 0;
   z-index: 100;
   box-shadow: var(--shadow);
 }
 
 .brand {
-  display: flax;
-  align-times: center;
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
 
@@ -89,11 +89,11 @@ header {
 
 .brand-title {
   font-size: 1.3rem;
-  fond-weight: 700;
+  font-weight: 700;
   letter-spacing: -0.3rem;
 }
 
-.brend-sub {
+.brand-sub {
   font-size: 0.78rem;
   color: var(--text-secondary);
 }
@@ -113,8 +113,8 @@ nav.tabs {
   color: var(--text-secondary);
   padding: 8px 16px;
   border-radius: 9px;
-  font-weigth: 600;
-  fond-size: 0.88rem;
+  font-weight: 600;
+  font-size: 0.88rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -128,14 +128,14 @@ nav.tabs {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.iteme-toggle {
+.theme-toggle {
   border: 1px solid var(--border);
   background: var(--bg-subtle);
   color: var(--text-primary);
   padding: 8px 14px;
   border-radius: 10px;
   cursor: pointer;
-  font-weigth: 600;
+  font-weight: 600;
   font-size: 0.85rem;
 }
 
@@ -147,7 +147,7 @@ main {
 }
 
 .view-section {
-  display: bloc;
+  display: block;
 }
 
 /* POS Grid */
@@ -174,7 +174,7 @@ main {
 }
 
 .subtitle-hint {
-  font-size: flex;
+  font-size: 0.85rem;
   color: var(--text-secondari);
 }
 
@@ -191,15 +191,15 @@ main {
   padding: 8px 15px;
   border-radius: 99px;
   font-size: 0.85rem;
-  font-weigth: 600;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
 }
 
 .pill.active, .pill:hover {
-  background: var(--eaccent);
+  background: var(--accent);
   color: #fff;
-  border-color: var(--acent);
+  border-color: var(--accent);
 }
 
 .search-input {
@@ -207,7 +207,7 @@ main {
   border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--bg-surface);
-  color: var(--text-primari);
+  color: var(--text-primary);
   min-width: 220px;
   font-size: 0.88rem;
 }
@@ -218,25 +218,25 @@ main {
 
 .menu-grid {
   display: grid;
-  gris-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gao: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
 }
 
 .menu-card {
   background: var(--bg-surface);
-  border: 1px solod var(--border);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: var(--sadhow)
-  transition: transfotm 0.2s;
+  box-shadow: var(--sadhow);
+  transition: transform 0.2s;
   position: relative;
 }
 
 .menu-card:hover {
-  transform: tranlateY(-3px);
+  transform: translateY(-3px);
 }
 
 .menu-card.sold-out {
@@ -246,7 +246,7 @@ main {
 .menu {
   font-size: 2.3rem;
   margin-bottom: 10px;
-  backgound: var(--bg-subtle);
+  background: var(--bg-subtle);
   width: 56px;
   height: 56px;
   border-radius: 12px;
@@ -255,22 +255,22 @@ main {
 }
 
 .menu-cat {
-  font-size: 0.72px;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.6px;
   color: var(--accent);
-  fomt-weight: 700;
+  font-weight: 700;
 }
 
 .menu-name {
-  font_size: 1rem;
+  font-size: 1rem;
   font-weight: 700;
   margin: 4px 0;
 }
 
 .menu-desc {
-  fond_size: 0.8rem;
-  color: var(--text-seconary);
+  font-size: 0.8rem;
+  color: var(--text-secodary);
   margin-bottom: 12px;
   line-height: 1.4;
 }
@@ -296,7 +296,7 @@ main {
   font-weight: 600;
   font-size: 0.84rem;
   cursor: pointer;
-  transition: 0.2s
+  transition: 0.2s;
 }
 
 .btn-sm {
@@ -312,15 +312,15 @@ main {
 }
 
 .btn-primary {
-  bacground: var(--accent);
+  background: var(--accent);
   color: #fff;
 }
 
-.btn-primary:hofer:not(:disabled) {
+.btn-primary:hover:not(:disabled) {
   background: var(--accent-hover);
 }
 
-.btn-primery:disabled {
+.btn-primary:disabled {
   background: var(--border);
   color: var(--text-secondary);
   cursor: not-allowed;
@@ -334,21 +334,21 @@ main {
 .btn-outline {
   background: transparent;
   border: 1px solid var(--border);
-  color: var(--text-primari);
+  color: var(--text-primary);
 }
 
 .btn-danger {
-  background: var(--danger-bgn);
+  background: var(--danger-bg);
   color: var(--danger);
 }
 
 /* Cart Panel */
 .cart-panel {
-  bacground: var(--bg-surface);
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
-  box-shadow:  var(--shadow);)
+  box-shadow:  var(--shadow);
   position: sticky;
   top: 84px;
 }
@@ -359,7 +359,7 @@ main {
   align-items: center;
   margin-bottom: 14px;
   padding-bottom: 12px;
-  border-botom: 1px solid var(--border)
+  border-bottom: 1px solid var(--border);
 }
 
 .order-meta {
@@ -373,7 +373,7 @@ main {
   padding: 8px 10px;
   border-radius: 8px;
   border:  1px solid var(--border);
-  backgroun: var(--bg-subtle);
+  background: var(--bg-subtle);
   color: var(--text-primary);
   font-size: 0.84rem;
   width: 100%;
@@ -381,7 +381,7 @@ main {
 
 .cart-items {
   max-height: 290px;
-  overlow-y: auto;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -396,13 +396,13 @@ main {
   font-size: 0.86rem;
 }
 
-,cart-item {
-  bacjground: var(--bg-subtle)
+.cart-item {
+  background: var(--bg-subtle);
   padding: 10px 12px;
-  borser-radius: 10px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  align-itemn: center;
+  align-items: center;
   gap: 10px;
 }
 
@@ -424,7 +424,7 @@ main {
 
 .qty-controls {
   display: flex;
-  align-item: center;
+  align-items: center;
   gap: 8px;
 }
 
@@ -435,12 +435,12 @@ main {
 
 .qty-btn {
   width: 26px;
-  haigth: 26px;
+  heigth: 26px;
   border-radius: 7px;
   border: 1px solid var(--border);
   background: var(--bg-surface);
   color: var(--text-primary);
-  font-weght: 700;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -455,7 +455,7 @@ main {
   padding: 8px 10px;
   border-radius: 8px;
   border: 1px solid var(--border);
-  bacground: var(--bg-subtle);
+  background: var(--bg-subtle);
   color: var(--text-primary);
   font-size: 0.83rem;
 }
@@ -496,7 +496,7 @@ main {
   gap: 12px;
 }
 
-.ticket top {
+.ticket-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -524,19 +524,19 @@ main {
 
 .done-label {
   color: var(--success);
-  fond-weught: 700;
+  fond-weight: 700;
   font-size: 0.85rem;
 }
 
 .status-badge {
   padding: 4px 10px;
   border-radius: 99px;
-  fount-size: 0.75rem;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
 .status-waiting { background: var(--warning-bg); color: var(--warning); }
-.status-brewing { background: var(--accebt-soft); color: var(--accent); }
+.status-brewing { background: var(--accent-soft); color: var(--accent); }
 .status-ready {background: var(--success-bg); color: var(--success); }
 
 .ticket-list {
@@ -569,7 +569,7 @@ main {
 
 .form-grid {
   display: grid;
-  grid-templat-columns: repeat(auto-fit, minimax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 12px;
   margin-top: 14px;
 }
@@ -578,7 +578,7 @@ main {
   padding: 10px 12px;
   border-radius: 9px;
   border: 1px solid var(--border);
-  bacground: var(--bg-subtle);
+  background: var(--bg-subtle);
   color: var(--text-primary);
   font-size: 0.88rem;
 }
@@ -589,7 +589,7 @@ main {
 
 table {
   width: 100%;
-  border-collapse: coolapse;
+  border-collapse: collapse;
   margin-top: 14px;
   font-size: 0.88rem;
 }
@@ -601,8 +601,8 @@ th, td {
 }
 
 th {
-  color:nvat(--text-secondary);
-  font-wegth: 600;
+  color:vat(--text-secondary);
+  font-weght: 600;
 }
 
 .price-edit-input {
@@ -616,18 +616,18 @@ th {
 
 .stock-available {
   background: var(--success-bg);
-  corr: var(--success);
+  color: var(--success);
 }
 
 .stock-empty  {
-  background: var(--denger-bg);
-  color: vas(--denger);
+  background: var(--danger-bg);
+  color: vas(--danger);
 }
 
 /* Analytics */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minimax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
   margin-bottom:22px;
 }
@@ -658,18 +658,18 @@ th {
 
 .chart-bars {
   display: flex;
-  align-ilems: flex-end;
+  align-items: flex-end;
   gap: 14px;
-  height-top: 20px;
+  padding-top: 20px;
 }
 
 .bar-col {
   flex: 1;
   display: flex;
-  flex-rediction: column;
-  align-ittems: center;
+  flex-direction: column;
+  align-items: center;
   gap: 6px;
-  haight: 100%;
+  height: 100%;
   justify-content: flex-end;
 }
 
@@ -677,7 +677,7 @@ th {
   width: 100%;
   max-width: 44px;
   background: var(--accent);
-  border-rdius: 8px 8px 0 0;
+  border-radius: 8px 8px 0 0;
   transition: height 0.4s ease;
   min-height: 8px;
 }
@@ -689,7 +689,7 @@ th {
 
 .bar-hour {
   font-size: 0.78rem;
-  color: var(--tex-secondary);
+  color: var(--text-secondary);
 }
 
 /* Modal */
@@ -702,6 +702,7 @@ th {
   z-index: 200;
   padding: 16px;
 }
+
 .modal-box {
   background: var(--bg-surface);
   border: 1px solid var(--border);
@@ -713,9 +714,9 @@ th {
 }
 
 .modal-price {
-  coloe: var( --accent);
-  font-wight: 700;
-  magin-top: 4px;
+  color: var( --accent);
+  font-weight: 700;
+  margin-top: 4px;
 }
 
 .option-group {
@@ -727,11 +728,11 @@ th {
   font-size: 0.83rem;
   font-weight: 600;
   margin-bottom: 6px;
-  coloe: var(--text-secondary);
+  color: var(--text-secondary);
 }
 
 .option-pills {
-  display: flax;
+  display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
@@ -770,7 +771,7 @@ th {
   line-height: 1.5;
 }
 
-@madia print {
+@media print {
   body * {visibility: hidden; }
   #receiptModal, #receiptModal * { visibility: visible; }
   #receiptModal { position: absolute; left: 0; top: 0; background: #fff; }
