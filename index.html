@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Kopi Senja & Ruang  - Coffe Shop POs & Management</title>
+  <title> Kopi Senja & Ruang  - Coffe Shop POS & Management</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
        <div class="brand-logo">☕</div>
         <div>
           <div class="brand-title">Kopi Senja & Ruang</div>
-          <div class="brand-sub">Poin of Sale & Barista System</div>
+          <div class="brand-sub">Point of Sale & Barista System</div>
         </div>
       </div>
 
@@ -77,7 +77,7 @@
                <div class="summary-row total"><span>Total Bayar</span><span id="totalText">Rp 0</span></div>
              </div>
 
-             <button class="btn btn-primari btn-checkout" id="checkoutBtn">
+             <button class="btn btn-primary btn-checkout" id="checkoutBtn">
                proses & Cetak Struk
              </button>
            </aside>
@@ -112,7 +112,7 @@
          </div>
 
          <div class="card-box">
-           <h3>Haftar Menu & Ketersediaan Sto</h3>
+           <h3>Daftar Menu & Ketersediaan Stok</h3>
            <div class="table-responsive">
              <table>
                <thead>
@@ -121,7 +121,7 @@
                    <th>Kategori</th>
                    <th>Harga (Rp)</th>
                    <th>Status Stok</th>
-                   <th>Asi</th>
+                   <th>Aksi</th>
                  </tr>
                </thead>
                <tbody id= "manageTableBody"></tbody>
@@ -134,7 +134,7 @@
        <section id="view-sales" class="view-section">
          <div class="stats-grid">
              <div class="stat-card">
-               <div class="stat-label">Total Pendapatan Hari Ini</div>
+               <div class="stat-label">Total Pesanan Hari Ini</div>
                <div class="stat-value" id="statRevenue">Rp 0</div>
              </div>
              <div class="stat-card">
@@ -142,7 +142,7 @@
                <div class="stat-value" id="statOrders">0</div>
              </div>
              <div class="stat-card">
-               <div class="stat-label">Total Transaksi</div>
+               <div class="stat-label">Menu Terlaris</div>
                <div class="stat-value stat-value-sm" id="statTopItem">-</div>
              </div>
            </div>
@@ -211,7 +211,7 @@
        </div>
      </div>
 
-  <!-- MODAK STRUK PEMBAYARAN -->
+  <!-- MODAL STRUK PEMBAYARAN -->
   <div class="modal-backdrop" id="receiptModal">
     <div class="modal-box">
       <div class="receipt-paper" id="receiptContent"></div>
@@ -220,7 +220,6 @@
         <button class="btn btn-primary" id="closeReceiptModal">Selesai</button>
       </div>
     </div>
-  </div>
 
      <script src="script.js"></script>
    </body>
